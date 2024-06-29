@@ -1,8 +1,13 @@
+img {
+    pointer-events: none;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: aliceblue;
+    color: #333;
 }
 
 nav {
@@ -42,6 +47,24 @@ main {
 
     margin-left: 1vw;
     margin-right: 1vw;
+}
+
+main::-webkit-scrollbar {
+    width: 0.75vw;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #22222273;
+    border-radius: 15px;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background-color: #2222229d;
+}
+
+main::-webkit-scrollbar-track {
+    background-color: rgb(220, 231, 239);
+    border-radius: 15px;
 }
 
 footer {

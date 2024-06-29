@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
 
-    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/about.css">
 
-    <script defer src="../javascript/shared.js"></script>
+    <script defer src="javascript/shared.js"></script>
+    <script defer src="javascript/about.js"></script>
 </head>
 
 <body>
@@ -20,24 +22,121 @@
     </nav>
 
     <main>
-        <h1> Education </h1>
+        <div class="section">
+            <h1 onclick="toggleTimeline('education')"> Education </h1>
+            <div class="timeline" id="education">
+                <div class="timeline_left">
+                    <div class="timeline_year">Current</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/University.png" alt="University of Malta">
+                        <p> MQF Level 7 - Master's Degree </p>
+                    </div>
+                    <div class="timeline_year">2024</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/University.png" alt="University of Malta">
+                        <p> MQF Level 6 - Bachelor's Degree </p>
+                    </div>
+                    <div class="timeline_year">2020</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/SAC.png" alt="St. Aloysius 6th Form">
+                        <p> MQF Level 4 - Matriculation Certificate </p>
+                    </div>
+                    <div class="timeline_year">2018</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/SAC.png" alt="St. Aloysius Secondary">
+                        <p> MQF Level 3 - Secondary School Education </p>
+                    </div>
+                    <div class="timeline_year">2013</div>
+                </div>
+            </div>
+        </div>
 
-        <h1> Certifications </h1>
+        <div class="section">
+            <h1> Language Skills </h1>
+            <div class="timeline">
 
-        <h1> Language Skills </h1>
+            </div>
+        </div>
 
-        <h1> Work Experience </h1>
+        <div class="section">
+            <h1 onclick="toggleTimeline('workExperience')"> Work Experience </h1>
+            <div class="timeline" id="workExperience">
+                <div class="timeline_left">
+                    <div class="timeline_year">SEP 2023</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/Mita.png" alt="MITA">
+                        <p> Malta Information Technology Agency </p>
+                    </div>
+                    <div class="timeline_year">JUL 2023</div>
+                    <div class="timeline_year"> &nbsp; | </div>
+                    <div class="timeline_year">SEP 2022</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/University.png" alt="University of Malta">
+                        <p> University of Malta </p>
+                    </div>
+                    <div class="timeline_year">JUL 2022</div>
+                    <div class="timeline_year"> &nbsp; | </div>
+                    <div class="timeline_year">AUG 2021</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/SCSA.png" alt="SCSA">
+                        <p> Social Care Standards Authority </p>
+                    </div>
+                    <div class="timeline_year">JUL 2021</div>
+                    <div class="timeline_year"> &nbsp; | </div>
+                    <div class="timeline_year">AUG 2020</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/Arms.png" alt="ARMS Ltd.">
+                        <p> Automated Revenue Management Services </p>
+                    </div>
+                    <div class="timeline_year">JUN 2020</div>
+                    <div class="timeline_year"> &nbsp; | </div>
+                    <div class="timeline_year">SEP 2019</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/Tourism.png" alt="Ministry of Tourism">
+                        <p> Ministry of Tourism </p>
+                    </div>
+                    <div class="timeline_year">JUL 2019</div>
+                    <div class="timeline_year"> &nbsp; | </div>
+                    <div class="timeline_year">SEP 2018</div>
+                    <div class="timeline_left_data">
+                        <img src="assets/About/HomeAffairs.png" alt="Home Affairs">
+                        <p> Ministry for Home Affairs and National Security </p>
+                    </div>
+                    <div class="timeline_year">JUL 2018</div>
+                </div>
+            </div>
+        </div>
 
-        <h1> Digital Skills </h1>
-        <h2> Programming Knowledge </h2>
-        <h2> Other Skills </h2>
+        <div class="section">
+            <h1> Certifications </h1>
+            <div class="timeline">
+                <div class="timeline_left">
+                    Test
+                </div>
+            </div>
+        </div>
 
-        <h1> Projects </h1>
-        <p>
-            For a more detailed view, head to the <a href="projects.html">projects page</a> .
-        </p>
+        <div class="section">
+            <h1> Digital Skills </h1>
+            <h2> Programming Knowledge </h2>
+            <h2> Other Skills </h2>
+        </div>
 
-        <h1> Hobbies and Interests </h1>
+        <div class="section">
+            <h1> Projects </h1>
+            <p>
+                For a more detailed view, head to the <a href="projects.html">projects page</a> .
+            </p>
+        </div>
+
+        <div class="section">
+            <h1> Hobbies and Interests </h1>
+            <div class="timeline">
+                <div class="timeline_left">
+                    Test
+                </div>
+            </div>
+        </div>
 
     </main>
 
