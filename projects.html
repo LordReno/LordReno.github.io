@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/projects.css">
 
     <script defer src="../javascript/shared.js"></script>
+    <script defer src="../javascript/project.js"></script>
 </head>
 
 <body>
@@ -22,8 +23,8 @@
     </nav>
 
     <main>
-        <div class="front_frame" style="display: none;">
-            <h1> My Projects </h1>
+        <div class="front_frame" style="display: none;" id="Front_Frame">
+            <h1 id="returnText"> Return </h1>
             <img src="assets/Projects/flex.png" alt="Game Logo">
             <div class="front_imageList">
                 <div class="front_image" id="img_-1"><img src="assets/Projects/flex.png" alt="Game Logo"></div>
@@ -82,7 +83,7 @@
                 <div class="blank"></div>
 
                 <div class="left_data">
-                    <div class="data_image">
+                    <div class="data_image" id="flexImages">
                         <img src="assets/Projects/flex.png" alt="Game Logo">
                     </div>
                     <div class="data_text">

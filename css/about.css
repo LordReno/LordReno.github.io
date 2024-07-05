@@ -40,7 +40,11 @@
     color: gray;
 }
 
-.timeline_left_data:hover {
+.timeline_selector:hover .timeline_year {
+    color: crimson;
+}
+
+.timeline_selector:hover .timeline_left_data {
     height: 11vh;
     filter: none;
     -webkit-filter: grayscale(0%);
@@ -63,6 +67,7 @@
     font-size: larger;
 }
 
+.timeline_divider,
 .timeline_year {
     font-size: large;
     margin: 5px;
@@ -71,6 +76,7 @@
     transition: color 0.3s linear;
 }
 
-.timeline_left_data:hover+.timeline_year {
-    color: black;
+.timeline_divider {
+    height: 20px;
+    width: auto;
 }

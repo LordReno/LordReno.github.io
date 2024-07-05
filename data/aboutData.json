@@ -1,0 +1,86 @@
+{
+    "Education": [
+        {
+            "Image": "assets/About/University.png",
+            "ImageAlt": "University of Malta",
+            "Title": "MQF Level 8 - PhD in Artificial Intelligence",
+            "Description": "Currently a Student studying for the opportunity to attain this degree.",
+            "FromDate": "2024",
+            "ToDate": "Current"
+        },
+        {
+            "Image": "assets/About/University.png",
+            "ImageAlt": "University of Malta",
+            "Title": "MQF Level 6 - Bachelors First Class",
+            "Description": "Obtained a Bachelors First Class in my Thesis on 'User Engagement in Serious Games'.",
+            "FromDate": "2021",
+            "ToDate": "2024"
+        },
+        {
+            "Image": "assets/About/SAC.png",
+            "ImageAlt": "St. Aloysius 6th Form",
+            "Title": "MQF Level 4 - Matriculation Certificate",
+            "Description": "Studied Pure Mathemathics and Computing at Advanced Level.",
+            "FromDate": "2018",
+            "ToDate": "2020"
+        },
+        {
+            "Image": "assets/About/SAC.png",
+            "ImageAlt": "St. Aloysius Secondary",
+            "Title": "MQF Level 3 - Secondary School Education",
+            "Description": "Graduated from St. Aloysius Secondary.",
+            "FromDate": "2013",
+            "ToDate": "2018"
+        }
+    ],
+    "WorkExperience": [
+        {
+            "Image": "assets/About/Mita.png",
+            "ImageAlt": "MITA",
+            "Title": "Malta Information Technology Agency",
+            "Description": "NOT ADDED",
+            "FromDate": "JUL 2023",
+            "ToDate": "SEP 2023"
+        },
+        {
+            "Image": "assets/About/University.png",
+            "ImageAlt": "University of Malta",
+            "Title": "University of Malta",
+            "Description": "NOT ADDED",
+            "FromDate": "JUL 2022",
+            "ToDate": "SEP 2022"
+        },
+        {
+            "Image": "assets/About/SCSA.png",
+            "ImageAlt": "SCSA",
+            "Title": "Social Care Standards Authority",
+            "Description": "NOT ADDED",
+            "FromDate": "JUL 2021",
+            "ToDate": "AUG 2021"
+        },
+        {
+            "Image": "assets/About/Arms.png",
+            "ImageAlt": "ARMS Ltd.",
+            "Title": "Automated Revenue Management Services",
+            "Description": "NOT ADDED",
+            "FromDate": "JUN 2020",
+            "ToDate": "AUG 2020"
+        },
+        {
+            "Image": "assets/About/Tourism.png",
+            "ImageAlt": "Ministry of Tourism",
+            "Title": "Ministry of Tourism",
+            "Description": "NOT ADDED",
+            "FromDate": "JUL 2019",
+            "ToDate": "SEP 2019"
+        },
+        {
+            "Image": "assets/About/HomeAffairs.png",
+            "ImageAlt": "Ministry for Home Affairs Logo",
+            "Title": "Ministry for Home Affairs and National Security",
+            "Description": "NOT ADDED",
+            "FromDate": "JUL 2018",
+            "ToDate": "SEP 2018"
+        }
+    ]
+}
