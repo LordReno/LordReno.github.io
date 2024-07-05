@@ -11,9 +11,9 @@ function processTarget(data, timeLine) {
     for (const educationData of data) {
         // Clone the timeline_year and timeline_left_data elements
         const clonedSelector = originalSelector.cloneNode(true);
-        const clonedYearStart = clonedSelector.querySelector('.timeline_year');
+        const clonedYearEnd = clonedSelector.querySelector('.timeline_year');
         const clonedData = clonedSelector.querySelector('.timeline_left_data');
-        const clonedYearEnd = clonedYearStart.cloneNode(true);
+        const clonedYearStart = clonedYearEnd.cloneNode(true);
         const clonedDidider = clonedSelector.querySelector('.timeline_divider');
 
         const title = educationData.Title;
@@ -33,7 +33,7 @@ function processTarget(data, timeLine) {
 
         // Append the cloned elements to the education timeline
         timeLine.appendChild(clonedSelector);
-        clonedSelector.appendChild(clonedYearEnd);
+        clonedSelector.appendChild(clonedYearStart);
 
         // Check if this is the last education item
         const isLastItem = educationData === data[data.length - 1];
