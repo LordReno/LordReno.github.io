@@ -21,11 +21,17 @@
     height: auto;
 }
 
+.rowdisplay,
 .timeline_left {
     position: relative;
     width: 50%;
     height: 100%;
     background-color: rgba(223, 231, 238, 0.5);
+}
+
+.rowdisplay {
+    width: 60%;
+    display: flex;
 }
 
 .timeline_left_data {
@@ -35,7 +41,7 @@
     width: 100%;
     height: 10vh;
     filter: gray;
-    -webkit-filter: grayscale(100%);
+    -webkit-filter: grayscale(90%);
     transition: filter 0.3s linear, color 0.3s linear;
     color: gray;
 }
@@ -79,4 +85,47 @@
 .timeline_divider {
     height: 20px;
     width: auto;
+}
+
+.rowdisplayData {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -webkit-fill-available;
+    height: max-content;
+    padding: 1%;
+
+    filter: gray;
+    -webkit-filter: grayscale(50%);
+    transition: filter 0.3s linear, color 0.3s linear;
+    color: gray;
+}
+
+.rowdisplayData:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.rowdisplayData img {
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 55%;
+}
+
+.rowdisplayData:hover img,
+.rowdisplayData:hover h2 {
+    max-width: 75%;
+    max-height: 60%;
+    color: #000;
+}
+
+.rowdisplayData h2 {
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.rowdisplayData p {
+    text-align: center;
 }
