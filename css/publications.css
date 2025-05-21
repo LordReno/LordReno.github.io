@@ -1,0 +1,66 @@
+.section p {
+    font-size: 1.25em;
+}
+
+.publication {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5vw;
+}
+
+.publication-item {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    border-left: 4px solid #1e1e2f;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.date {
+    font-weight: bold;
+    color: #1e1e2f;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.prePrint,
+.officialPrint {
+    font-weight: bold;
+    text-decoration: none;
+    transition: colour 0.3s, padding 0.3s;
+}
+
+.prePrint {
+    color: orange;
+}
+
+.prePrint:hover {
+    padding-right: 10px;
+    color: red;
+}
+
+.officialPrint {
+    color: darkblue;
+}
+
+.officialPrint:hover {
+    padding-left: 10px;
+    color: blue;
+}

@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    display: flex;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #1e1e2f;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #1e1e2f;
+    padding: 2rem 1rem;
+    position: fixed;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    background-color: #f9f9f9;
+    margin-bottom: 0.8rem;
+}
+
+.name {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
+    border-radius: 25%;
+}
+
+.social-links a:hover img {
+    opacity: 0.75;
+}
+
+.nav-links {
+    font-size: 1.1rem;
+    list-style: none;
+    width: 100%;
+}
+
+.nav-links li {
+    margin: 1rem 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: background 0.3s, colour 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #3e3e5a;
+    color: #fff;
+}
+
+.nav-links a img {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.6rem;
+}
+
+.content {
+    margin-left: 300px;
+    flex: 1;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 20vh;
+    justify-content: center;
+}
+
+.section h1 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 2.25em;
+}
+
+.section h2 {
+    margin: 1vh 5vw;
+    text-align: left;
+    font-size: 1.8em;
+    font-weight: normal;
+    border-bottom: 2px solid;
+}
+
+.section p {
+    margin: 10px 15%;
+    font-size: 1.5em;
+}

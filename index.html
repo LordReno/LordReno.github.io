@@ -5,62 +5,359 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <title>Welcome</title>
+    <title>About</title>
 
-    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
 
-    <script defer src="javascript/shared.js"></script>
+    <script defer src="javascript/main.js"></script>
+    <script defer src="javascript/index.js"></script>
 </head>
 
 <body>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="about.html" id="aboutMeLink">About Me</a>
-        <a href="projects.html" id="projectsLink">Projects</a>
-    </nav>
-
-    <main>
-        <h1> Overview </h1>
-        <div class="intro">
-            <div class="intro_picture">
-                <img src="assets/Profile.png" alt="A Cartoonified Picture of Me">
-            </div>
-
-            <div class="intro_column">
-                <div class="intro_row">
-                    <h2> Reno Yuri Camilleri </h2>
-                </div>
-                <div class="intro_row">
-                    <div class="intro_data">
-                        <p><b>Nationality: </b> Maltese</p>
-                    </div>
-                    <div class="intro_data">
-                        <p><b>DoB: </b> 23rd July 2002</p>
-                    </div>
-                </div>
-                <p>
-                    <b>About me: </b>I am an Artificial Intelligence (AI) programmer with a passion for continuous
-                    learning and growth. I have a strong background in various AI-related topics including but not
-                    limited to: Reinforcement Learning, Genetic Algorithms, Natural Language Processing, Computer Vision
-                    and Semantic Analysis. As an individual I always give every project my all, and with my attention to
-                    detail, and problem-solving abilities make me an asset to any team.
-                    <a href="about.html">[View More]</a>
-                </p>
+    <nav class="sidebar">
+        <div class="profile-section">
+            <img src="assets/Profile.png" alt="My Picture" class="profile-pic">
+            <h2 class="name">Reno Yuri Camilleri</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/reno-yuri-camilleri/" target="_blank"><img
+                        src="assets/Navbar/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://orcid.org/0009-0005-6016-1257" target="_blank"><img src="assets/Navbar/orcid.png"
+                        alt="ORCID"></a>
+                <a href="https://www.researchgate.net/profile/Reno-Yuri-Camilleri" target="_blank"><img
+                        src="assets/Navbar/researchGate.png" alt="researchGate"></a>
             </div>
         </div>
 
-        <h1> Contact Me </h1>
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfbNeBnw_K8Smx2AzKEH3wMwGEfwOB9xVjHg8DyZDp486_kqQ/viewform?embedded=true"
-            width="50%" height="50%" frameborder="0" marginheight="0" marginwidth="0">Loading…
-        </iframe>
+        <ul class="nav-links">
+            <li><a href="index.html#about"><img src="assets/Navbar/page_about.png" alt=""> About</a></li>
+            <li><a href="index.html#resume"><img src="assets/Navbar/page_resume.png" alt=""> Resume</a></li>
+            <li><a href="publications.html"><img src="assets/Navbar/page_publications.png" alt=""> Publications</a></li>
+            <li><a href="portfolio.html#portfolio"><img src="assets/Navbar/page_portfolio.png" alt=""> Portfolio</a>
+            </li>
+            <li><a href="portfolio.html#games"><img src="assets/Navbar/page_games.png" alt=""> Games</a></li>
+            <li><a href="contact.html"><img src="assets/Navbar/page_contact.png" alt=""> Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+
+        <img src="assets/Other/Wallpaper.png" alt="Banner Image"
+            draggable="false">
+        <div class="text-overlay">
+            <div class="aboutName">Reno Yuri Camilleri</div>
+            <div id="aboutProfession" class="aboutProfession"></div>
+            <br>
+            <a href="#about" class="scroll-button">
+                &#x25BC; <!-- Unicode Down Arrow -->
+            </a>
+        </div>
+
+        <div class="section" id="about">
+            <h1>About Me</h1>
+
+            <div class="aboutMeExtra">
+                <div class="aboutMeExtra-Box">
+                    <b>Nationality</b><br><br> Maltese
+                </div>
+                <div class="aboutMeExtra-Box">
+                    <b>Date of Birth</b><br><br> 23rd July 2002
+                </div>
+                <div class="aboutMeExtra-Box">
+                    <b>Gender</b><br><br> Male
+                </div>
+            </div>
+
+            <p>Hello and welcome! My name is Reno Yuri Camilleri, and I am an Artificial Intelligence (AI) programmer
+                with a deep-rooted passion for advancing the field of intelligent systems.</p>
+            <p>I am currently pursuing a <b>Doctorate (PhD) in Artificial Intelligence</b> at the University of Malta,
+                where I
+                also serve as a <b>Researcher</b>. Balancing academic study with hands-on research allows me to
+                contribute meaningfully to both theoretical advancements and real-world applications in AI.</p>
+            <p>My academic and professional journey has equipped me with a robust foundation in a wide array of AI
+                disciplines. These include, but are not limited to: Reinforcement Learning, Genetic Algorithms, Natural
+                Language Processing (NLP), Computer Vision, and Semantic Analysis. I am especially driven by the
+                challenge of designing intelligent systems that can learn, adapt, and interact with the world in
+                human-like ways.</p>
+            <p>As a professional, I approach every project with full commitment and a meticulous attention to detail. My
+                strong problem-solving skills, combined with a collaborative mindset, make me a valuable asset to any
+                team or initiative. I thrive in environments that encourage innovation, continuous learning, and
+                meaningful collaboration.</p>
+            <p>Whether it is contributing to cutting-edge research, developing intelligent solutions, or working within
+                interdisciplinary teams, I am passionate about harnessing the power of AI to solve complex problems and
+                create impactful change.</p>
+        </div>
+
+        <div class="section" id="resume">
+            <h1>Resume</h1>
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/University.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Dec 2024 – Current</div>
+                        <h3>University of Malta</h3>
+                        Msida, Malta
+                        <br>Research Support Officer
+                    </div>
+                </div>
+
+                <div class="sametimeline">
+                    <div class="timeline-item">
+                        <div class="logo">
+                            <img src="assets/Logos/Government.png" alt="Company Logo">
+                        </div>
+                        <div class="details">
+                            <div class="date">Jul 2024 – Sep 2024</div>
+                            <h3>MHAA</h3>
+                            Pieta, Malta
+                            <br>ICT Summer Internship
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="logo">
+                            <img src="assets/Logos/University.png" alt="Company Logo">
+                        </div>
+                        <div class="details">
+                            <div class="date">Jul 2024 & Sep 2024</div>
+                            <h3>University of Malta</h3>
+                            Msida, Malta
+                            <br>Bootcamp Tutor
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/Mita.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jul 2023 - Sep 2023</div>
+                        <h3>MITA</h3>
+                        Santa Venera, Malta
+                        <br>ICT Summer Internship
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/University.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jul 2022 - Sep 2022</div>
+                        <h3>University of Malta</h3>
+                        Msida, Malta
+                        <br>ICT Summer Internship
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/SCSA.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jul 2021 - Aug 2021</div>
+                        <h3>SCSA</h3>
+                        Santa Venera, Malta
+                        <br>ICT Summer Internship
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/Arms.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jun 2020 - Aug 2020</div>
+                        <h3>ARMS Ltd.</h3>
+                        Hamrun, Malta
+                        <br>Summer Office Clerk
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/Tourism.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jul 2019 - Sep 2019</div>
+                        <h3>Ministry of Tourism</h3>
+                        Valletta, Malta
+                        <br>Summer Office Clerk
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/Government.png" alt="Company Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">Jul 2018 - Sep 2018</div>
+                        <h3>MHAS</h3>
+                        Valletta, Malta
+                        <br>Summer Office Clerk
+                    </div>
+                </div>
+            </div>
+
+            <h2>Education and Training</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/University.png" alt="University Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date"> 2024 – Current</div>
+                        <h3>PhD in Artificial Intelligence</h3>
+                        University of Malta (Msida, Malta)
+                    </div>
+                </div>
+
+                <div class="sametimeline">
+                    <div class="timeline-item">
+                        <div class="logo">
+                            <img src="assets/Logos/University.png" alt="University Logo">
+                        </div>
+                        <div class="details">
+                            <div class="date">2021 – 2024</div>
+                            <h3>Bachelor of Science in IT <br>(Artificial Intelligence)</h3>
+                            University of Malta (Msida, Malta)
+                            <br><b>Grade:</b> First Class
+                        </div>
+                    </div>
+
+                    <div class="timeline-item2">
+                        <div class="logo">
+                            <img src="assets/Logos/Certificate.png" alt="Certification">
+                        </div>
+                        <div class="details">
+                            <div class="date">2023</div>
+                            <h3>Unity Certified Associate -<br>Game Developer</h3>
+                            Unity Technologies
+                        </div>
+                    </div>
+
+                    <div class="timeline-item2">
+                        <div class="logo">
+                            <img src="assets/Logos/Certificate.png" alt="Certification">
+                        </div>
+                        <div class="details">
+                            <div class="date">2023</div>
+                            <h3>Azure AI Fundamentals</h3>
+                            Microsoft Certified
+                        </div>
+                    </div>
+
+                    <div class="timeline-item2">
+                        <div class="logo">
+                            <img src="assets/Logos/Certificate.png" alt="Certification">
+                        </div>
+                        <div class="details">
+                            <div class="date">2023</div>
+                            <h3>First Aid Certificate</h3>
+                            St John Malta
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="logo">
+                        <img src="assets/Logos/SAC.png" alt="School Logo">
+                    </div>
+                    <div class="details">
+                        <div class="date">2018 – 2020</div>
+                        <h3>Matriculation Certificate</h3>
+                        St. Aloysius College (Birkirkara, Malta)
+                        <br><b>A Levels:</b> Computing & Pure Maths
+                    </div>
+                </div>
+
+                <div class="timeline-item2">
+                    <div class="logo">
+                        <img src="assets/Logos/Certificate.png" alt="Certification">
+                    </div>
+                    <div class="details">
+                        <div class="date">2015</div>
+                        <h3>ECDL Certificate</h3>
+                        ECDL Malta
+                    </div>
+                </div>
+            </div>
+
+            <h2>Language Skills</h2>
+            <div class="evenRow">
+                <div class="language">
+                    <img src="assets/Flags/Malta_Flag.png" alt="MT Flag">
+                    <b>Maltese</b>
+                    <br>Fluent
+                </div>
+
+                <div class="language">
+                    <img src="assets/Flags/UK_Flag.png" alt="UK Flag">
+                    <b>English</b>
+                    <br>Fluent
+                </div>
+
+                <div class="language">
+                    <img src="assets/Flags/Russia_Flag.png" alt="RS Flag">
+                    <b>Russian</b>
+                    <br>Conversational
+                </div>
+            </div>
+
+            <h2>Other Skills</h2>
+            <h3 class="skillHeader">High Proficiency</h3>
+            <div class="evenRow" style="justify-content: start;">
+                <div class="skill skill_Industry">Artificial Intelligence</div>
+                <div class="skill skill_Industry">Natural Language Processing</div>
+                <div class="skill skill_Industry">Sentiment Analysis</div>
+                <div class="skill skill_Industry">Object Oriented Programming</div>
+                <div class="skill skill_Industry">Game Design</div>
+                <div class="skill skill_Industry">Web Development</div>
+                <div class="skill skill_Industry">Machine Learning</div>
+                <div class="skill skill_Industry">Reinforcement Learning</div>
+                <div class="skill skill_Industry">Procedural Generation</div>
+                <div class="skill skill_Tool">Unity Engine</div>
+                <div class="skill skill_Tool">Roblox Studio</div>
+                <div class="skill skill_Program">Lua</div>
+                <div class="skill skill_Program">Java</div>
+                <div class="skill skill_Program">C#</div>
+                <div class="skill skill_Program">HTML</div>
+                <div class="skill skill_Program">CSS</div>
+            </div>
+
+            <h3 class="skillHeader">Average Proficiency</h3>
+            <div class="evenRow" style="justify-content: start;">
+                <div class="skill skill_Industry">Computer Vision</div>
+                <div class="skill skill_Industry">NPC Development</div>
+                <div class="skill skill_Industry">AI in Education</div>
+                <div class="skill skill_Tool">PRTG</div>
+                <div class="skill skill_Tool">Microsoft Azure</div>
+                <div class="skill skill_Program">R</div>
+                <div class="skill skill_Program">JavaScript</div>
+                <div class="skill skill_Program">C++</div>
+                <div class="skill skill_Program">C</div>
+                <div class="skill skill_Program">Python</div>
+            </div>
+            
+            <h3 class="skillHeader">Basic-Level Proficiency</h3>
+            <div class="evenRow" style="justify-content: start;">
+                <div class="skill skill_Industry">Robotics</div>
+                <div class="skill skill_Industry">Data Mining</div>
+                <div class="skill skill_Tool">Windows Server</div>
+                <div class="skill skill_Program">PHP</div>
+            </div>
+        </div>
+
+        <footer style="margin: 5vh 0;">
+            &copy; Reno Yuri Camilleri 2025
+        </footer>
     </main>
 
-    <footer>
-        &copy; 2024 - Reno Yuri Camilleri
-    </footer>
+
 
 </body>
 
