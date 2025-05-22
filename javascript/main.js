@@ -8,6 +8,12 @@ function setupWebpage() {
     });
 }
 
+const toggleButton = document.getElementById('menuToggle');
+const sidebar = document.querySelector('.sidebar');
+
 // Initial setup
+toggleButton.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
 
 setupWebpage();

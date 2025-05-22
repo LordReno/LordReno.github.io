@@ -215,3 +215,62 @@
 .skill_Program {
     background-image: linear-gradient(#9a184e, #b81c58);
 }
+
+/* Mobile responsiveness. */
+@media (max-width: 768px) {
+    .text-overlay {
+        left: 0;
+        margin-left: 0;
+    }
+
+    .aboutName {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .aboutProfession {
+        font-size: 0rem;
+        visibility: hidden;
+    }
+
+    .aboutMeExtra {
+        flex-wrap: wrap;
+    }
+
+    .aboutMeExtra-Box {
+        font-size: 1.2em;
+        padding: 25px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+
+    .timeline-item,
+    .timeline-item2 {
+        width: 80vw;
+        border-left: 4px solid #1e1e2f;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .evenRow {
+        margin: 0 2vw;
+    }
+
+    .language img {
+        width: 35vw;
+    }
+
+    .skill {
+        padding: 5px 15px;
+        margin: 0 10px;
+        margin-bottom: 2vh;
+    }
+
+    .skill:hover {
+        padding: 5px 20px;
+    }
+
+    .skillHeader {
+        margin: 10px 5vw;
+    }
+}

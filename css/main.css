@@ -144,3 +144,85 @@ footer {
     margin: 10px 15%;
     font-size: 1.5em;
 }
+
+/* Hide toggle on larger screens */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile responsiveness. */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: #1e1e2f;
+        border: none;
+        padding: 0.6rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background: #fff;
+    }
+
+    .profile-section {
+        margin-bottom: 1rem;
+    }
+    
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links {
+        font-size: 1.5rem;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+        padding: 1.2rem 1.2rem;
+    }
+
+    .nav-links a img {
+        width: 2rem;
+        height: auto;
+        margin-right: 1rem;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .section h2 {
+        margin: 1vh 15px;
+        text-align: center;
+    }
+
+    .section p {
+        margin: 10px 15px;
+        text-align: center;
+        font-size: 1.25em;
+    }
+}

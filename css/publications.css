@@ -64,3 +64,33 @@
     padding-left: 10px;
     color: blue;
 }
+
+/* Mobile responsiveness. */
+@media (max-width: 768px) {
+
+    .section p {
+        font-size: 1em;
+    }
+
+    .publication-item {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0px;
+        text-align: center;
+        color: lightslategrey;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .date {
+        font-size: 1.5em;
+    }
+
+    .details h3 {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: black;
+    }
+}
