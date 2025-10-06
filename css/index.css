@@ -179,6 +179,11 @@
     border-radius: 8px;
 }
 
+.language:hover {
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+}
+
 .skill {
     padding: 10px 20px;
     margin: 0 10px;
