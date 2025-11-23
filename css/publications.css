@@ -41,7 +41,8 @@
 }
 
 .prePrint,
-.officialPrint {
+.officialPrint,
+.openAccessPrint {
     font-weight: bold;
     text-decoration: none;
     transition: colour 0.3s, padding 0.3s;
@@ -63,6 +64,14 @@
 .officialPrint:hover {
     padding-left: 10px;
     color: blue;
+}
+
+.openAccessPrint {
+    color: purple;
+}
+
+.openAccessPrint:hover {
+    color: hotpink;
 }
 
 /* Mobile responsiveness. */
