@@ -18,9 +18,16 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.publication-item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .logo {
+    display: flex;
     flex-shrink: 0;
     margin-right: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo img {
@@ -38,6 +45,11 @@
 .details h3 {
     margin: 0;
     font-size: 18px;
+}
+
+.author {
+    color: #a1a1a1;
+    padding-bottom: 0.5em;
 }
 
 .prePrint,
@@ -101,5 +113,14 @@
         font-size: 1.2em;
         font-weight: normal;
         color: black;
+        padding-bottom: 1em;
+    }
+
+    .researchType {
+        display: none;
+    }
+
+    .author {
+        display: none;
     }
 }
