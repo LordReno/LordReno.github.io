@@ -85,127 +85,397 @@
         <div class="section" id="resume">
             <h1>Resume</h1>
             <h2>Work Experience</h2>
-            <div class="timeline">
-                <div class="sametimeline">
-                    <div class="timeline-item">
-                        <div class="logo">
-                            <img src="assets/Logos/University.png" alt="Company Logo">
-                        </div>
-                        <div class="details">
-                            <div class="date">Dec 2024 – Current</div>
-                            <h3>University of Malta</h3>
-                            Msida, Malta
-                            <br>Research Support Officer
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="logo">
-                            <img src="assets/Logos/University.png" alt="Company Logo">
-                        </div>
-                        <div class="details">
-                            <div class="date">Jul 2025 & Sep 2025</div>
-                            <h3>University of Malta</h3>
-                            Msida, Malta
-                            <br>Bootcamp Tutor
-                        </div>
-                    </div>
+
+            <div class="career-timeline" id="careerTimeline">
+                <div class="career-timeline__rail" aria-hidden="true">
+                    <div class="career-timeline__line"></div>
+                    <div class="career-timeline__ticks" id="timelineTicks"></div>
                 </div>
 
-                <div class="sametimeline">
-                    <div class="timeline-item">
-                        <div class="logo">
-                            <img src="assets/Logos/Government.png" alt="Company Logo">
+                <div class="career-timeline__cards">
+                    <article class="career-card" data-start="2024-12" data-end="present" data-lane="0"
+                        data-accent="teal">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/University.png" alt="University of Malta logo">
+                                </div>
+
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Dec 2024 — Current</p>
+                                        <h3>University of Malta</h3>
+                                        <div class="career-card__meta-group">
+                                            <p class="career-card__role">Research Support Officer</p>
+                                            <p class="career-card__meta">Msida, Malta</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        During my time as a Research Support Officer, I worked on various projects of
+                                        the
+                                        University of Malta, primarily: SWIM-360 a research initiative to develop
+                                        explainable AI-powered swimming analysis pipelines, and dashboard for coaches.
+                                    </p>
+                                    <ul>
+                                        <li>Back-End Server Development</li>
+                                        <li>Front-End Website Development</li>
+                                        <li>Software Infrastructure</li>
+                                        <li>Databases</li>
+                                        <li>Explainable Systems</li>
+                                        <li>Applied Artificial Intelligence</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
                         </div>
-                        <div class="details">
-                            <div class="date">Jul 2024 – Sep 2024</div>
-                            <h3>MHAA</h3>
-                            Pieta, Malta
-                            <br>ICT Summer Internship
+                    </article>
+
+                    <article class="career-card" data-start="2026-07" data-end="2026-07" data-lane="1"
+                        data-accent="blue">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/University.png" alt="University of Malta logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2026</p>
+                                        <h3>University of Malta</h3>
+                                        <p class="career-card__role">Bootcamp Tutor</p>
+                                        <p class="career-card__meta">Msida, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I served as a tutor for the “xPloring Intelligence - A Bootcamp on Us and Tech”,
+                                        bootcamp at the University of
+                                        Malta.
+                                    </p>
+                                    <ul>
+                                        <li>Artificial Intelligence</li>
+                                        <li>Teaching</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="logo">
-                            <img src="assets/Logos/University.png" alt="Company Logo">
+                    </article>
+
+                    <article class="career-card" data-start="2025-07" data-end="2025-09" data-lane="1"
+                        data-accent="blue">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/University.png" alt="University of Malta logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2025 — Sep 2025</p>
+                                        <h3>University of Malta</h3>
+                                        <p class="career-card__role">Bootcamp Tutor</p>
+                                        <p class="career-card__meta">Msida, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I served as a tutor for the “xPloring Intelligence - A Bootcamp on Us and Tech”,
+                                        as well as the "Tech Trek - A Teen Tech Adventure" bootcamp at the University of
+                                        Malta.
+                                    </p>
+                                    <ul>
+                                        <li>Artificial Intelligence</li>
+                                        <li>Teaching</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
                         </div>
-                        <div class="details">
-                            <div class="date">Jul 2024 & Sep 2024</div>
-                            <h3>University of Malta</h3>
-                            Msida, Malta
-                            <br>Bootcamp Tutor
+                    </article>
+
+                    <article class="career-card" data-start="2024-07" data-end="2024-09" data-lane="1"
+                        data-accent="violet">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/Government.png" alt="MHAA logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2024 — Sep 2024</p>
+                                        <h3>MHAA</h3>
+                                        <p class="career-card__role">ICT Summer Internship</p>
+                                        <p class="career-card__meta">Pietà, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I worked for the Information Management Unit for the Ministry for Health and
+                                        Active Ageing.
+                                    </p>
+                                    <ul>
+                                        <li>IT Management</li>
+                                        <li>Clerical Duties</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
                         </div>
-                    </div>
-                </div>
+                    </article>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/Mita.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jul 2023 - Sep 2023</div>
-                        <h3>MITA</h3>
-                        Santa Venera, Malta
-                        <br>ICT Summer Internship
-                    </div>
-                </div>
+                    <article class="career-card" data-start="2024-07" data-end="2024-09" data-lane="1"
+                        data-accent="gold">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/University.png" alt="University of Malta logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2024 — Sep 2024</p>
+                                        <h3>University of Malta</h3>
+                                        <p class="career-card__role">Bootcamp Tutor</p>
+                                        <p class="career-card__meta">Msida, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/University.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jul 2022 - Sep 2022</div>
-                        <h3>University of Malta</h3>
-                        Msida, Malta
-                        <br>ICT Summer Internship
-                    </div>
-                </div>
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I served as a tutor for the “xPloring Intelligence - A Bootcamp on Us and Tech”,
+                                        as well as the "Tech Trek - A Teen Tech Adventure" bootcamp at the University of
+                                        Malta.
+                                    </p>
+                                    <ul>
+                                        <li>Artificial Intelligence</li>
+                                        <li>Teaching</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/SCSA.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jul 2021 - Aug 2021</div>
-                        <h3>SCSA</h3>
-                        Santa Venera, Malta
-                        <br>ICT Summer Internship
-                    </div>
-                </div>
+                    <article class="career-card" data-start="2023-07" data-end="2023-09" data-lane="0"
+                        data-accent="rose">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/Mita.png" alt="MITA logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2023 — Sep 2023</p>
+                                        <h3>MITA</h3>
+                                        <p class="career-card__role">ICT Summer Internship</p>
+                                        <p class="career-card__meta">Santa Venera, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/Arms.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jun 2020 - Aug 2020</div>
-                        <h3>ARMS Ltd.</h3>
-                        Hamrun, Malta
-                        <br>Summer Office Clerk
-                    </div>
-                </div>
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I worked under a Senior Solutions Architect and was exposed to a variety of
+                                        software, as well as was taught a variety of details related to building a
+                                        secure system, as well as the basic concepts of cyber security.
+                                    </p>
+                                    <ul>
+                                        <li>PRTG</li>
+                                        <li>Solutions Architecture</li>
+                                        <li>Computer Networking Principals</li>
+                                        <li>Windows Datacenter Server Setup</li>
+                                        <li>Basic Server Management</li>
+                                        <l1>Microsoft Azure</l1>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/Tourism.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jul 2019 - Sep 2019</div>
-                        <h3>Ministry of Tourism</h3>
-                        Valletta, Malta
-                        <br>Summer Office Clerk
-                    </div>
-                </div>
+                    <article class="career-card" data-start="2022-07" data-end="2022-09" data-lane="1"
+                        data-accent="teal">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/University.png" alt="University of Malta logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2022 — Sep 2022</p>
+                                        <h3>University of Malta</h3>
+                                        <p class="career-card__role">ICT Summer Internship</p>
+                                        <p class="career-card__meta">Msida, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="timeline-item">
-                    <div class="logo">
-                        <img src="assets/Logos/Government.png" alt="Company Logo">
-                    </div>
-                    <div class="details">
-                        <div class="date">Jul 2018 - Sep 2018</div>
-                        <h3>MHAS</h3>
-                        Valletta, Malta
-                        <br>Summer Office Clerk
-                    </div>
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I worked under Dr. Dylan Seychell at the University of Malta, where I helped
+                                        develop AI in Media related projects.
+                                    </p>
+                                    <ul>
+                                        <li>Web Development</li>
+                                        <li>Natural Language Processing</li>
+                                        <li>Sentiment Analysis</li>
+                                        <li>Data Mining</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-start="2021-07" data-end="2021-08" data-lane="0"
+                        data-accent="blue">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/SCSA.png" alt="SCSA logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2021 — Aug 2021</p>
+                                        <h3>SCSA</h3>
+                                        <p class="career-card__role">ICT Summer Internship</p>
+                                        <p class="career-card__meta">Santa Venera, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I did clerical work at the Social Care Standards Authority.
+                                    </p>
+                                    <ul>
+                                        <li>Digital Archive Management</li>
+                                        <li>Physical Archive Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-start="2020-06" data-end="2020-08" data-lane="1"
+                        data-accent="violet">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/Arms.png" alt="ARMS logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jun 2020 — Aug 2020</p>
+                                        <h3>ARMS Ltd.</h3>
+                                        <p class="career-card__role">Summer Office Clerk</p>
+                                        <p class="career-card__meta">Hamrun, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I did clerical work at the Automated Revenue Management Services (ARMS) Ltd.
+                                    </p>
+                                    <ul>
+                                        <li>Clerical Duties</li>
+                                        <li>Customer Support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-start="2019-07" data-end="2019-09" data-lane="0"
+                        data-accent="gold">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/Tourism.png" alt="Ministry of Tourism logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2019 — Sep 2019</p>
+                                        <h3>Ministry of Tourism</h3>
+                                        <p class="career-card__role">Summer Office Clerk</p>
+                                        <p class="career-card__meta">Valletta, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I was tasked with giving directions, and assisting tourists in Valletta.
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-start="2018-07" data-end="2018-09" data-lane="1"
+                        data-accent="rose">
+                        <div class="career-card__marker"></div>
+                        <div class="career-card__content">
+                            <div class="career-card__top">
+                                <div class="logo">
+                                    <img src="assets/Logos/Government.png" alt="MHAS logo">
+                                </div>
+                                <div class="career-card__summary">
+                                    <div>
+                                        <p class="career-card__date">Jul 2018 — Sep 2018</p>
+                                        <h3>MHAS</h3>
+                                        <p class="career-card__role">Summer Office Clerk</p>
+                                        <p class="career-card__meta">Valletta, Malta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="career-card__details">
+                                <div class="career-card__details-inner">
+                                    <p>
+                                        I worked for the Ministry for Home Affairs, Security and Employment as an office clerk.
+                                    </p>
+                                    <ul>
+                                        <li>Clerical Duties</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="career-card__toggle" type="button">More details</button>
+                        </div>
+                    </article>
                 </div>
             </div>
 
