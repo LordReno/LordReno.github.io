@@ -323,55 +323,61 @@
 }
 
 .career-card__summary {
-    display: grid;
-    gap: 10px;
+    margin-left: 5%;
     min-width: 0;
+    text-align: left;
+}
+
+.career-card__summary>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.career-card__meta-group {
+    display: contents;
 }
 
 .career-card__date {
     margin: 0;
-    font-size: 0.42rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
     text-align: left;
-    justify-self: left;
+    justify-self: start;
 }
 
-.career-card h3 {
+.career-card__role-title {
     margin: 0;
     font-size: 1.24rem;
     line-height: 1.2;
+    font-weight: bold;
     color: var(--tl-text);
+    text-align: left;
 }
 
-.career-card__meta-group {
-    display: grid;
-    gap: 6px;
+.career-card__workplace {
+    margin: 0;
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--tl-text);
+    text-align: left;
 }
 
-.career-card__role,
 .career-card__meta {
     margin: 0;
-    line-height: 1.45;
-}
-
-.career-card__role {
-    font-size: 0.98rem;
-    font-weight: 700;
-    color: var(--tl-text);
-}
-
-.career-card__meta {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
     color: var(--tl-muted);
+    text-align: left;
 }
 
 .career-card__meta::before {
-    content: "•";
-    margin-right: 8px;
-    color: var(--accent);
+    content: none;
 }
 
 .career-card__details {
@@ -398,7 +404,8 @@
 
 .career-card__details ul {
     margin: 0;
-    padding-left: 18px;
+    padding-left: 0;
+    list-style: none;
     color: var(--tl-text);
 }
 
@@ -406,6 +413,16 @@
     margin-bottom: 8px;
     line-height: 1.5;
     color: var(--tl-muted);
+    padding-left: 18px;
+    position: relative;
+}
+
+.career-card__details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
 }
 
 .career-card__toggle {
@@ -433,6 +450,30 @@
     background: rgba(255, 255, 255, 0.985);
     box-shadow: 0 20px 44px rgba(30, 30, 47, 0.14);
     border-color: color-mix(in srgb, var(--accent) 24%, rgba(30, 30, 47, 0.12));
+}
+
+.career-card__content .career-card__date {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.career-card__content .career-card__workplace {
+    margin: 0;
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--tl-text);
+}
+
+.career-card__content .career-card__meta {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--tl-muted);
 }
 
 .career-card.is-expanded {
