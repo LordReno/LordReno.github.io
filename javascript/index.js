@@ -47,8 +47,8 @@ if (timelineRoot) {
     const maxMonth    = Math.max(...cards.map((c) => monthValue(c.dataset.end)));
     const totalMonths = Math.max(maxMonth - minMonth + 1, 1);
     const pxPerMonth  = 34;
-    const CARD_GAP    = 12;   // minimum px gap between cards in the same lane
-    const BOTTOM_PAD  = 20;   // extra space below the last card
+    const CARD_GAP    = 12;
+    const BOTTOM_PAD  = 20;
     const timelineHeight = Math.max(totalMonths * pxPerMonth, 900);
 
     // ── 1. Compute raw top / height for every card ──────────────────────────
@@ -131,25 +131,26 @@ if (timelineRoot) {
         });
     });
 
-    // ── 6. Year tick labels — anchored to the first card of each year ────────
-    // (uses the POST-collision top values so labels stay aligned with their cards)
-    const yearFirstTop = {};
-    cardMeta.forEach(({ start, top }) => {
-        const yr = Math.floor(start / 12);
-        if (!(yr in yearFirstTop) || top < yearFirstTop[yr]) {
-            yearFirstTop[yr] = top;
-        }
-    });
+    // ── 6. Year tick labels — calendar-based (December of each year) ──────────
+    // This places each year boundary at the correct calendar position on the
+    // rail, so cards always fall inside their proper year zone regardless of
+    // how collision resolution has shifted them.
+    const startYear = Math.floor(minMonth / 12);
+    const endYear   = Math.ceil(maxMonth / 12);
 
-    Object.entries(yearFirstTop)
-        .sort(([a], [b]) => Number(b) - Number(a))
-        .forEach(([year, top]) => {
+    for (let year = endYear; year >= startYear; year--) {
+        const yearMonth = year * 12 + 11; // December of this year
+        const top = ((maxMonth - yearMonth) / totalMonths) * timelineHeight;
+
+        // Only render the tick if it falls within (or just above) the visible area
+        if (top >= -pxPerMonth && top <= finalHeight) {
             const tick = document.createElement("div");
             tick.className = "timeline-tick";
             tick.style.top = `${top}px`;
             tick.innerHTML = `<span>${year}</span>`;
             ticksWrap.appendChild(tick);
-        });
+        }
+    }
 }
 
 animateText(professions[index]);
