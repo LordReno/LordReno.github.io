@@ -14,7 +14,6 @@ function animateText(text) {
     typingElement.textContent = text;
     typingElement.style.animation = `typing 3s steps(${text.length}, end) forwards, blink 0.7s step-end infinite`;
 
-    // Wait for typing to finish, then pause, then delete
     setTimeout(() => {
         typingElement.style.animation = 'none';
         void typingElement.offsetWidth;
@@ -24,16 +23,16 @@ function animateText(text) {
         setTimeout(() => {
             index = (index + 1) % professions.length;
             animateText(professions[index]);
-        }, 2000); // Wait for delete to complete
+        }, 2000);
 
-    }, 4000); // 3s typing + 1s pause
+    }, 4000);
 }
 
 if (timelineRoot) {
     const cardsWrap = timelineRoot.querySelector(".career-timeline__cards");
     const ticksWrap = timelineRoot.querySelector("#timelineTicks");
-    const rail = timelineRoot.querySelector(".career-timeline__rail");
-    const cards = [...timelineRoot.querySelectorAll(".career-card")];
+    const rail      = timelineRoot.querySelector(".career-timeline__rail");
+    const cards     = [...timelineRoot.querySelectorAll(".career-card")];
 
     const monthValue = (raw) => {
         if (!raw || raw.toLowerCase() === "present") {
@@ -44,15 +43,15 @@ if (timelineRoot) {
         return year * 12 + (month - 1);
     };
 
-    const minMonth = Math.min(...cards.map((card) => monthValue(card.dataset.start)));
-    const maxMonth = Math.max(...cards.map((card) => monthValue(card.dataset.end)));
+    const minMonth    = Math.min(...cards.map((c) => monthValue(c.dataset.start)));
+    const maxMonth    = Math.max(...cards.map((c) => monthValue(c.dataset.end)));
     const totalMonths = Math.max(maxMonth - minMonth + 1, 1);
-    const pxPerMonth = 34;
-    const CARD_GAP = 12;    // minimum pixel gap between cards in the same lane
-    const BOTTOM_PAD = 20;  // extra space at the bottom of the timeline
+    const pxPerMonth  = 34;
+    const CARD_GAP    = 12;   // minimum px gap between cards in the same lane
+    const BOTTOM_PAD  = 20;   // extra space below the last card
     const timelineHeight = Math.max(totalMonths * pxPerMonth, 900);
 
-    // --- Compute raw top / height for every card ---
+    // ── 1. Compute raw top / height for every card ──────────────────────────
     const cardMeta = cards.map((card) => {
         const start = monthValue(card.dataset.start);
         const end   = monthValue(card.dataset.end);
@@ -61,30 +60,31 @@ if (timelineRoot) {
         return { card, start, end, top, height: h, lane: Number(card.dataset.lane) };
     });
 
-    // --- Per-lane collision resolution (push overlapping cards downward) ---
+    // ── 2. Set CSS order for mobile (newest first) ───────────────────────────
+    cardMeta.forEach((m) => {
+        m.card.style.setProperty("--mobile-order", String(maxMonth - m.start));
+    });
+
+    // ── 3. Per-lane collision resolution (push overlapping cards downward) ───
     [0, 1].forEach((lane) => {
-        const lane_cards = cardMeta
+        const lc = cardMeta
             .filter((m) => m.lane === lane)
             .sort((a, b) => a.top - b.top);
 
-        for (let i = 0; i < lane_cards.length - 1; i++) {
-            const cur = lane_cards[i];
-            const nxt = lane_cards[i + 1];
-            const needed = cur.top + cur.height + CARD_GAP;
-            if (nxt.top < needed) {
-                nxt.top = needed;
-            }
+        for (let i = 0; i < lc.length - 1; i++) {
+            const needed = lc[i].top + lc[i].height + CARD_GAP;
+            if (lc[i + 1].top < needed) lc[i + 1].top = needed;
         }
     });
 
-    // --- Grow container if any card now sticks out the bottom ---
-    const maxBottom = Math.max(...cardMeta.map((m) => m.top + m.height));
+    // ── 4. Grow container to fit all pushed cards ────────────────────────────
+    const maxBottom  = Math.max(...cardMeta.map((m) => m.top + m.height));
     const finalHeight = Math.max(timelineHeight, maxBottom + BOTTOM_PAD);
 
     cardsWrap.style.minHeight = `${finalHeight}px`;
-    rail.style.minHeight     = `${finalHeight}px`;
+    rail.style.minHeight      = `${finalHeight}px`;
 
-    // --- Apply positions and build segments ---
+    // ── 5. Apply positions + build coloured segments on the rail ────────────
     cardMeta.forEach(({ card, top, height }) => {
         card.style.setProperty("--top",    `${top}px`);
         card.style.setProperty("--height", `${height}px`);
@@ -96,77 +96,60 @@ if (timelineRoot) {
         segment.style.setProperty("--accent", getComputedStyle(card).getPropertyValue("--accent"));
         ticksWrap.appendChild(segment);
 
-        const toggleButton = card.querySelector(".career-card__toggle");
+        const toggleBtn = card.querySelector(".career-card__toggle");
 
-        const activate = () => {
-            card.classList.add("is-active");
-            segment.classList.add("is-active");
-        };
-
-        const deactivate = () => {
-            if (!card.classList.contains("is-expanded")) {
-                card.classList.remove("is-active");
-                segment.classList.remove("is-active");
-            }
-        };
+        const activate   = () => { card.classList.add("is-active");    segment.classList.add("is-active"); };
+        const deactivate = () => { if (!card.classList.contains("is-expanded")) { card.classList.remove("is-active"); segment.classList.remove("is-active"); } };
 
         const toggleExpand = () => {
-            const isExpanded = card.classList.contains("is-expanded");
+            const wasExpanded = card.classList.contains("is-expanded");
 
-            cards.forEach((otherCard) => {
-                otherCard.classList.remove("is-expanded");
-                otherCard.classList.remove("is-active");
-                const otherButton = otherCard.querySelector(".career-card__toggle");
-                if (otherButton) otherButton.textContent = "More details";
+            cards.forEach((other) => {
+                other.classList.remove("is-expanded", "is-active");
+                const ob = other.querySelector(".career-card__toggle");
+                if (ob) ob.textContent = "More details";
             });
+            ticksWrap.querySelectorAll(".timeline-segment").forEach((s) => s.classList.remove("is-active"));
 
-            [...ticksWrap.querySelectorAll(".timeline-segment")].forEach((seg) => {
-                seg.classList.remove("is-active");
-            });
-
-            if (!isExpanded) {
-                card.classList.add("is-expanded");
-                card.classList.add("is-active");
+            if (!wasExpanded) {
+                card.classList.add("is-expanded", "is-active");
                 segment.classList.add("is-active");
-                if (toggleButton) toggleButton.textContent = "Hide details";
+                if (toggleBtn) toggleBtn.textContent = "Hide details";
             }
         };
 
         card.addEventListener("mouseenter", activate);
         card.addEventListener("mouseleave", deactivate);
-        card.addEventListener("focusin", activate);
-        card.addEventListener("focusout", deactivate);
+        card.addEventListener("focusin",    activate);
+        card.addEventListener("focusout",   deactivate);
 
-        if (toggleButton) {
-            toggleButton.addEventListener("click", (event) => {
-                event.stopPropagation();
-                toggleExpand();
-            });
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", (e) => { e.stopPropagation(); toggleExpand(); });
         }
-
-        card.addEventListener("click", (event) => {
-            if (!event.target.closest(".career-card__toggle")) {
-                toggleExpand();
-            }
+        card.addEventListener("click", (e) => {
+            if (!e.target.closest(".career-card__toggle")) toggleExpand();
         });
     });
 
-    const startYear = Math.floor(minMonth / 12);
-    const endYear   = Math.floor(maxMonth / 12);
+    // ── 6. Year tick labels — anchored to the first card of each year ────────
+    // (uses the POST-collision top values so labels stay aligned with their cards)
+    const yearFirstTop = {};
+    cardMeta.forEach(({ start, top }) => {
+        const yr = Math.floor(start / 12);
+        if (!(yr in yearFirstTop) || top < yearFirstTop[yr]) {
+            yearFirstTop[yr] = top;
+        }
+    });
 
-    for (let year = endYear; year >= startYear; year--) {
-        const yearMonth = year * 12 + 11;
-        const top = ((maxMonth - yearMonth) / totalMonths) * timelineHeight;
-
-        if (top >= 0 && top <= finalHeight) {
+    Object.entries(yearFirstTop)
+        .sort(([a], [b]) => Number(b) - Number(a))
+        .forEach(([year, top]) => {
             const tick = document.createElement("div");
             tick.className = "timeline-tick";
             tick.style.top = `${top}px`;
             tick.innerHTML = `<span>${year}</span>`;
             ticksWrap.appendChild(tick);
-        }
-    }
+        });
 }
 
-// Start the first animation
 animateText(professions[index]);
