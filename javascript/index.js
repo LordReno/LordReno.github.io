@@ -47,25 +47,51 @@ if (timelineRoot) {
     const minMonth = Math.min(...cards.map((card) => monthValue(card.dataset.start)));
     const maxMonth = Math.max(...cards.map((card) => monthValue(card.dataset.end)));
     const totalMonths = Math.max(maxMonth - minMonth + 1, 1);
-    const pxPerMonth = 22;
+    const pxPerMonth = 34;
+    const CARD_GAP = 12;    // minimum pixel gap between cards in the same lane
+    const BOTTOM_PAD = 20;  // extra space at the bottom of the timeline
     const timelineHeight = Math.max(totalMonths * pxPerMonth, 900);
 
-    cardsWrap.style.minHeight = `${timelineHeight}px`;
-    rail.style.minHeight = `${timelineHeight}px`;
-
-    cards.forEach((card, index) => {
+    // --- Compute raw top / height for every card ---
+    const cardMeta = cards.map((card) => {
         const start = monthValue(card.dataset.start);
-        const end = monthValue(card.dataset.end);
+        const end   = monthValue(card.dataset.end);
+        const top   = ((maxMonth - end) / totalMonths) * timelineHeight;
+        const h     = Math.max(((end - start + 1) / totalMonths) * timelineHeight, 170);
+        return { card, start, end, top, height: h, lane: Number(card.dataset.lane) };
+    });
 
-        const top = ((maxMonth - end) / totalMonths) * timelineHeight;
-        const height = (((end - start) + 1) / totalMonths) * timelineHeight;
+    // --- Per-lane collision resolution (push overlapping cards downward) ---
+    [0, 1].forEach((lane) => {
+        const lane_cards = cardMeta
+            .filter((m) => m.lane === lane)
+            .sort((a, b) => a.top - b.top);
 
-        card.style.setProperty("--top", `${top}px`);
+        for (let i = 0; i < lane_cards.length - 1; i++) {
+            const cur = lane_cards[i];
+            const nxt = lane_cards[i + 1];
+            const needed = cur.top + cur.height + CARD_GAP;
+            if (nxt.top < needed) {
+                nxt.top = needed;
+            }
+        }
+    });
+
+    // --- Grow container if any card now sticks out the bottom ---
+    const maxBottom = Math.max(...cardMeta.map((m) => m.top + m.height));
+    const finalHeight = Math.max(timelineHeight, maxBottom + BOTTOM_PAD);
+
+    cardsWrap.style.minHeight = `${finalHeight}px`;
+    rail.style.minHeight     = `${finalHeight}px`;
+
+    // --- Apply positions and build segments ---
+    cardMeta.forEach(({ card, top, height }) => {
+        card.style.setProperty("--top",    `${top}px`);
         card.style.setProperty("--height", `${height}px`);
 
         const segment = document.createElement("div");
         segment.className = "timeline-segment";
-        segment.style.top = `${top}px`;
+        segment.style.top    = `${top}px`;
         segment.style.height = `${Math.max(height, 18)}px`;
         segment.style.setProperty("--accent", getComputedStyle(card).getPropertyValue("--accent"));
         ticksWrap.appendChild(segment);
@@ -126,13 +152,13 @@ if (timelineRoot) {
     });
 
     const startYear = Math.floor(minMonth / 12);
-    const endYear = Math.floor(maxMonth / 12);
+    const endYear   = Math.floor(maxMonth / 12);
 
     for (let year = endYear; year >= startYear; year--) {
         const yearMonth = year * 12 + 11;
         const top = ((maxMonth - yearMonth) / totalMonths) * timelineHeight;
 
-        if (top >= 0 && top <= timelineHeight) {
+        if (top >= 0 && top <= finalHeight) {
             const tick = document.createElement("div");
             tick.className = "timeline-tick";
             tick.style.top = `${top}px`;

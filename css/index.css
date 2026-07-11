@@ -244,6 +244,11 @@
     --accent: #d14d72;
 }
 
+/* ── Connector arrow ── */
+/* Lane 0 (left side): arrow must bridge the gap to the centre line.
+   Card right outer edge = 50% - 54px; centre line = 50%.
+   Arrow (width: 24px) right tip should sit flush with the line:
+   right: -54px places the arrow's right edge at 50%. */
 .career-card::before {
     content: "";
     position: absolute;
@@ -254,13 +259,20 @@
 }
 
 .career-card[data-lane="0"]::before {
-    right: 6px;
+    right: -54px;
 }
 
+/* Lane 1 (right side): card left outer edge = 50%; centre line = 50%.
+   Arrow left tip should sit flush with the line: left: 0. */
 .career-card[data-lane="1"]::before {
-    left: 6px;
+    left: 0;
 }
 
+/* ── Dot marker ── */
+/* Lane 0: marker centre must sit at 50% (the centre line).
+   Card right outer edge = 50% - 54px.
+   right: -62px => right edge at 50% - 54px + 62px = 50% + 8px;
+   marker centre = right_edge - 8px = 50%. */
 .career-card__marker {
     position: absolute;
     top: 27px;
@@ -274,9 +286,10 @@
 }
 
 .career-card[data-lane="0"] .career-card__marker {
-    right: -8px;
+    right: -62px;
 }
 
+/* Lane 1: left: -8px already places marker centre at 50%. */
 .career-card[data-lane="1"] .career-card__marker {
     left: -8px;
 }
