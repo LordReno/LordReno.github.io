@@ -220,8 +220,6 @@
 .career-card[data-accent="rose"]   { --accent: #d14d72; }
 
 /* ── Connector arrow ───────────────────────────────────── */
-/* Lane 0 right edge = 50%−54px; centre line = 50%.
-   Arrow right tip at 50% → right: −54px.               */
 .career-card::before {
     content: "";
     position: absolute;
@@ -232,11 +230,9 @@
 }
 
 .career-card[data-lane="0"]::before { right: -54px; }
-/* Lane 1 left edge = 50%; arrow left tip at 50% → left: 0. */
 .career-card[data-lane="1"]::before { left: 0; }
 
 /* ── Dot marker ────────────────────────────────────────── */
-/* Lane 0: right: −62px → marker centre sits at 50%.      */
 .career-card__marker {
     position: absolute;
     top: 27px;
@@ -250,7 +246,6 @@
 }
 
 .career-card[data-lane="0"] .career-card__marker { right: -62px; }
-/* Lane 1: left: −8px already centres the marker at 50%. */
 .career-card[data-lane="1"] .career-card__marker { left: -8px; }
 
 /* ── Card content ──────────────────────────────────────── */
@@ -533,6 +528,20 @@
         height: 56px;
         border-radius: 12px;
         padding: 6px;
+    }
+
+    /* Explicitly lock all card text to left-align, overriding any
+       global centering rules that may be active at this breakpoint */
+    .career-card__summary,
+    .career-card__summary > div,
+    .career-card__date,
+    .career-card__role-title,
+    .career-card__workplace,
+    .career-card__meta,
+    .career-card__toggle,
+    .career-card__details p,
+    .career-card__details li {
+        text-align: left !important;
     }
 
     .career-card__role-title { font-size: 1.05rem; }
